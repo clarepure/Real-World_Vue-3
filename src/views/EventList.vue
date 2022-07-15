@@ -22,8 +22,11 @@ export default {
   },
   created() {
     //get events from mock db when component is created
-    EventService.getEvents().then(response => { this.events = response.data})
-    .catch(error => console.log(error))
+    EventService.getEvents()
+      .then(response => {
+        this.events = response.data
+      })
+      .catch(error => console.log(error))
   }
 }
     /* old inefficient
